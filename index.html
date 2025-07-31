@@ -1,9 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
 <head>
-  <title>VOccl3D dataset</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VOccl3D Dataset</title>
+    <!-- <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" /> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-  <h1>COMING SOON!</h1>
+    <!-- <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="container is-max-desktop">
+            <div class="navbar-brand">
+                <a class="navbar-item"
+                    href="https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/">
+                    <img src="img/Microsoft-logo.svg" alt="Mixed Reality & AI Lab – Cambridge" style="height: 1.4rem;">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item"
+                        href="https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/">
+                        Mixed Reality & AI
+                    </a>
+                </div>
+                <div class="navbar-end">
+                    <a class="navbar-item" href="https://asia.siggraph.org/2024/">
+                        <img class="is-hidden-touch" src="img/sa-logo-white.png" alt="SIGGRAPH Asia 2024">
+                        <img class="is-hidden-desktop" src="img/sa-logo-black.png" alt="SIGGRAPH Asia 2024">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h1 class="title is-2 has-text-centered">VOccl3D: A Video Benchmark Dataset for 3D Human Pose
+              and Shape Estimation under real Occlusions</h1>
+            <!-- <p class="subtitle is-4 has-text-centered"> </p> -->
+            <p class="subtitle is-5 has-text-centered has-text-grey mb-0">ICCV 2025 (Poster)</p>
+            <!-- <p class="subtitle is-6 has-text-centered has-text-grey">SIGGRAPH Asia 2024</p> -->
+            <p class="subtitle is-6 has-text-centered authors" style="line-height: 1.5;">
+                
+  
+                <span><a>Yash&nbsp;Garg</a></span>
+                <span><a>Saketh&nbsp;Bachu</a></span>
+                <span><a>Arindam&nbsp;Dutta</a></span>
+                <span><a>Rohit&nbsp;Rohit Lal</a></span>
+                <span><a>Sarosij&nbsp;Bose</a></span>
+                <span><a>Calvin-Khang&nbsp;Ta</a></span>
+                <span><a href="https://intra.ece.ucr.edu/~sasif/">M.&nbsp;Salman&nbsp;Asif</a></span>
+                <span><a href="https://vcg.ece.ucr.edu/amit">Amit&nbsp;Roy-Chowdhury</a></span>
+            </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered mt-5">
+            <a class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="fa fa-file-text"></i></span>
+                <span>Paper</span>
+            </a>
+            <a class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+            </a>
+            <!-- <a class="button is-rounded is-link is-light mr-2">
+                <span class="icon"><i class="fa fa-youtube" aria-hidden="true"></i></span>
+                <span>Video</span>
+            </a> -->
+            <a class="button is-rounded is-link is-light">
+                <span class="icon"><i class="fa fa-github"></i></span>
+                <span>Datasets</span>
+            </a>
+        </div>
+    </section>
+    <!-- <section>
+        <div class="container is-max-desktop">
+            <figure class="image is-16by9">
+                <iframe class="has-ratio" width="640" height="360" src="https://youtube.com/embed/4RkLDW3GmdY" frameborder="0" allowfullscreen=""></iframe>
+            </figure>
+        </div>
+    </section> -->
+    <section>
+      <div class="container is-max-desktop">
+          <figure class="image is-16by9">
+              <img class="has-ratio" src="img/teaser.png" alt="Descriptive alt text">
+          </figure>
+      </div>
+    </section>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Abstract
+            </h1>
+            <div class="content has-text-justified-desktop">
+              Human pose and shape (HPS) estimation methods have
+              been extensively studied, with many demonstrating high
+              zero-shot performance on in-the-wild images and videos.
+              However, these methods often struggle in challenging scenarios involving complex human poses or significant occlusions. Although some studies address 3D human pose
+              estimation under occlusion, they typically evaluate performance on datasets that lack realistic or substantial occlusions, e.g., most existing datasets introduce occlusions with
+              random patches over the human or clipart-style overlays,
+              which may not reflect real-world challenges. To bridge
+              this gap in realistic occlusion datasets, we introduce a
+              novel benchmark dataset, VOccl3D, a Video-based human
+              Occlusion dataset with 3D body pose and shape annotations. Inspired by works such as AGORA and BEDLAM, we
+              constructed this dataset using advanced computer graphics
+              rendering techniques, incorporating diverse real-world occlusion scenarios, clothing textures, and human motions.
+              Additionally, we fine-tuned recent HPS methods, CLIFF
+              and BEDLAM-CLIFF, on our dataset, demonstrating significant qualitative and quantitative improvements across
+              multiple public datasets, as well as on the test split of our
+              dataset, while comparing its performance with other stateof-the-art methods. Furthermore, we leveraged our dataset
+              to enhance human detection performance under occlusion
+              by fine-tuning an existing object detector, YOLO11, thus
+              leading to a robust end-to-end HPS estimation system under occlusions. Overall, this dataset serves as a valuable
+              resource for future research aimed at benchmarking methods designed to handle occlusions, offering a more realistic
+              alternative to existing occlusion datasets.
+            </div>
+        </div>
+    </section>
+    <!-- <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Holistic Performance Capture
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>Our approach combines machine-learning models for dense-landmark and parameter prediction with
+                    model-fitting to provide a robust, accurate and adaptable system. Our method supports registration
+                    of the face, body and hands; in isolation, and together in a single take.
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="has-text-centered">
+                            <video width="100%" height="auto" autoplay muted loop playsinline style="max-width: 512px;">
+                                <source src="vid/body_res.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p>
+                            Our parametric model captures body and hand pose, body and face shape, and facial
+                            expression.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <div class="has-text-centered">
+                            <video width="100%" height="auto" autoplay muted loop playsinline style="max-width: 512px;">
+                                <source src="vid/face_res.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p>
+                            We can also track tongue articulation and eye gaze.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <div class="has-text-centered">
+                            <video width="100%" height="auto" autoplay muted loop playsinline style="max-width: 512px;">
+                                <source src="vid/hand_res.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <p>
+                            Our method achieves state-of-the-art results on a number of 3D reconstruction benchmarks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                No Hassle
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>Motion capture shoots typically require specialist hardware, skilled experts and a lot of time to
+                    get right. This can make them expensive and challenging to manage in a tight production schedule.
+                    Our method aims to eliminate this inconvenience by providing a marker-less, calibration-free
+                    solution that can be used with off-the-shelf hardware. This allows for quick and easy capture of
+                    high-quality motion data in a variety of environments.
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <video class="is-16by9" width="100%" autoplay muted loop playsinline>
+                            <source src="vid/studio.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                            Using just two uncalibrated mobile-phone cameras we can achieve high quality results in
+                            world-space.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <video class="is-16by9" width="100%" autoplay muted loop playsinline>
+                            <source src="vid/in-the-wild.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                            Our method even works with a single, moving camera in an unconstrained environment with
+                            arbitrary clothing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                Synthetic Datasets
+            </h1>
+            <div class="content has-text-justified-desktop">
+                <p>Our method is trained <i>exclusively</i> on synthetic data, generated using a conventional computer
+                    graphics pipeline. The three datasets used in the paper are available to download <a
+                        href="https://github.com/microsoft/SynthMoCap">here</a>.
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <img src="img/body-data.jpg" />
+                        <p>
+                            <i>SynthBody</i> can be used for tasks such as skeletal tracking and body pose prediction.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img src="img/face-data.jpg" />
+                        <p>
+                            <i>SynthFace</i> can be used for tasks such as facial landmark and head pose prediction or
+                            face parsing.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img src="img/hand-data.jpg" />
+                        <p>
+                            <i>SynthHand</i> can be used for tasks such as hand pose prediction or landmark regression.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-0">
+        <div class="container is-max-desktop">
+            <h1 class="title is-4">
+                BibTeX
+            </h1>
+            <pre>
+@article{hewitt2024look,
+    title={Look Ma, no markers: holistic performance capture without the hassle},
+    author={Hewitt, Charlie and Saleh, Fatemeh and Aliakbarian, Sadegh and Petikam, Lohit and Rezaeifar, Shideh and Florentin, Louis and Hosenie, Zafiirah and Cashman, Thomas J and Valentin, Julien and Cosker, Darren and Baltru\v{s}aitis, Tadas},
+    journal={ACM Transactions on Graphics (TOG)},
+    volume={43},
+    number={6},
+    year={2024},
+    publisher={ACM New York, NY, USA},
+    articleno={235},
+    numpages={12},
+}</pre>
+        </div>
+    </section> -->
+    <footer class="footer pb-0">
+        <div class="content has-text-centered pb-5">
+            <p>
+                Work conducted at the <a href=https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge>
+                <br class="is-hidden-desktop">
+                Mixed Reality &amp; AI Lab &ndash; Cambridge</a>.<br>
+                <img src="img/Microsoft-logo-only.svg" class="mt-5" alt="Microsoft" style="height: 2rem;">
+            </p>
+        </div>
+        <div class="footer-links content has-text-centered pt-5 has-text-grey-lighter is-size-7">
+            <a href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy</a>
+            <a href="https://go.microsoft.com/fwlink/?LinkID=206977">Terms&nbsp;of&nbsp;Use</a>
+            <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks">Trademarks</a>
+            <a href="https://microsoft.com">&copy;&nbsp;Microsoft&nbsp;2025</a>
+        </div>
+    </footer>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+        }
+    });
+</script>
+
 </html>
