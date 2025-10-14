@@ -20,3 +20,6 @@ python visualize_voccl3d_dataset.py \
 --vis_mesh \
 --vis_keypoint
 ```
+
+## Acknowledgment
+We thank the [BEDLAM](https://github.com/pixelite1201/BEDLAM#install), [SMPL-X](https://smpl-x.is.tue.mpg.de), [AMASS](https://amass.is.tue.mpg.de/download.php), and [SMPLitex](https://github.com/dancasas/SMPLitex?tab=readme-ov-file#SMPLitex-dataset) for their work and code repository.
